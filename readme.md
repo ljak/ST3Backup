@@ -26,7 +26,7 @@ Package Control.last-run
 * Install `Package Control` via the website or via the command pallete « Install Package Control ».
 * Clone your (Git) repo from your source control service of choice inside the **Sublime Text (3) User folder**:
 ```
-git clone https://github.com/[username]/SublimeText3.git ~/.config/sublime-text-3/Packages/User/
+git clone https://github.com/[username]/[reponame].git ~/.config/sublime-text-3/Packages/User/
 ```
 * Start Sublime Text and ... wait: `Package control` needs to install all the packages.
 

@@ -2,8 +2,6 @@
 [
 		{ "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
 		{ "keys": ["ctrl+shift+h"], "command": "pass" },
-		{ "keys": ["ctrl+ç"], "command": "reveal_in_side_bar" },
-		{ "keys": ["ctrl+\""], "command": "toggle_side_bar" },
 		{ "keys": ["ctrl+shift+e"], "command": "reopen_last_file" },
 		{ "keys": ["ctrl+shift+t"], "command": "goto_symbol_in_project" },
 		{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
@@ -13,6 +11,37 @@
 		{ "keys": ["alt+space"], "command": "jump_forward" },
 		{ "keys": ["ctrl+b"], "command": "goto_definition" },
 		{ "keys": ["ctrl+shift+b"], "command": "goto_reference" },
+
+		{ "keys": ["ctrl+$"], "command": "toggle_side_bar" },
+		{ "keys": ["alt+$"], "command": "reveal_in_side_bar" },
+		// create layout single (ctrl + ")
+		{
+			"keys": ["ctrl+\""],
+			"command": "set_layout",
+			"args":
+				{
+					"cols": [0.0, 1.0],
+					"rows": [0.0, 1.0],
+					"cells": [[0, 0, 1, 1]]
+				}
+		},
+		// create layout double columns (ctrl + «)
+		{
+			"keys": ["ctrl+«"],
+			"command": "set_layout",
+			"args":
+				{
+					"cols": [0.0, 0.5, 1.0],
+					"rows": [0.0, 1.0],
+					"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+				}
+		},
+		    // go to group1 (alt + ")
+		    { "keys": ["alt+\""], "command": "focus_group", "args": { "group": 0 } },
+		    // go to group2 (alt + «)
+		    { "keys": ["alt+«"], "command": "focus_group", "args": { "group": 1 } },
+		    // go to next group (alt + tab)
+		    { "keys": ["alt+tab"], "command": "focus_neighboring_group", "args": {"forward": false} },
 
 
 		// Find panel key bindings

@@ -44,6 +44,54 @@
 		    { "keys": ["alt+tab"], "command": "focus_neighboring_group", "args": {"forward": false} },
 
 
+	{ "keys": ["alt+up"], "command": "move", "args": {"by": "pages", "forward": false} },
+	{ "keys": ["alt+down"], "command": "move", "args": {"by": "pages", "forward": true} },
+	{ "keys": ["alt+shift+up"], "command": "move", "args": {"by": "pages", "forward": false, "extend": true} },
+	{ "keys": ["alt+shift+down"], "command": "move", "args": {"by": "pages", "forward": true, "extend": true} },	
+
+	{ "keys": ["alt+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["alt+right"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{ "keys": ["alt+shift+left"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+	{ "keys": ["alt+shift+right"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+
+	{ "keys": ["ctrl+up"], "command": "swap_line_up" },
+	{ "keys": ["ctrl+down"], "command": "swap_line_down" },
+	{ "keys": ["ctrl+shift+up"], "command": "pass" },
+	{ "keys": ["ctrl+shift+down"], "command": "pass" },
+
+	{ "keys": ["alt+ctrl+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+ctrl+down"], "command": "select_lines", "args": {"forward": true} },
+
+	{ "keys": ["ctrl+shift+a"], "command": "expand_selection", "args": {"to": "line"} },
+	{ "keys": ["ctrl+l"], "command": "pass", "args": {"to": "line"} },
+	{ "keys": ["ctrl+d"], "command": "pass" },
+	{ "keys": ["ctrl+k", "ctrl+d"], "command": "pass" },
+	{ "keys": ["ctrl+shift+space"], "command": "pass", "args": {"to": "scope"} },
+	{ "keys": ["ctrl+shift+m"], "command": "pass", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+m"], "command": "pass", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+shift+j"], "command": "pass", "args": {"to": "indentation"} },
+
+	{ "keys": ["ctrl+space"], "command": "auto_complete" },
+	{ "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+
+	{ "keys": ["ctrl+l"], "command": "reindent", "context":
+		[
+			{ "key": "setting.auto_indent", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+			{ "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
+		]
+	},
+
+	{ "keys": ["alt+c"], "command": "duplicate_line" },
+
+
 		// Find panel key bindings
 	{ "keys": ["enter"], "command": "find_next", "context":
 		[{"key": "panel", "operand": "find"}, {"key": "panel_has_focus"}]

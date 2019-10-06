@@ -65,11 +65,13 @@
 	{ "keys": ["ctrl+shift+a"], "command": "expand_selection", "args": {"to": "line"} },
 	{ "keys": ["ctrl+l"], "command": "pass", "args": {"to": "line"} },
 	{ "keys": ["ctrl+d"], "command": "pass" },
+	{ "keys": ["ctrl+shift+d"], "command": "pass" },
+	{ "keys": ["ctrl+j"], "command": "pass" },
 	{ "keys": ["ctrl+k", "ctrl+d"], "command": "pass" },
 	{ "keys": ["ctrl+shift+space"], "command": "pass", "args": {"to": "scope"} },
 	{ "keys": ["ctrl+shift+m"], "command": "pass", "args": {"to": "brackets"} },
 	{ "keys": ["ctrl+m"], "command": "pass", "args": {"to": "brackets"} },
-	{ "keys": ["ctrl+shift+j"], "command": "pass", "args": {"to": "indentation"} },
+	// { "keys": ["ctrl+shift+j"], "command": "pass", "args": {"to": "indentation"} },
 
 	{ "keys": ["ctrl+space"], "command": "auto_complete" },
 	{ "keys": ["ctrl+space"], "command": "replace_completion_with_auto_complete", "context":
@@ -80,16 +82,30 @@
 		]
 	},
 
-	{ "keys": ["ctrl+l"], "command": "reindent", "context":
-		[
-			{ "key": "setting.auto_indent", "operator": "equal", "operand": true },
-			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
-			{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
-			{ "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
-		]
-	},
+	// { "keys": ["ctrl+l"], "command": "reindent", "context":
+	// 	[
+	// 		{ "key": "setting.auto_indent", "operator": "equal", "operand": true },
+	// 		{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+	// 		{ "key": "preceding_text", "operator": "regex_match", "operand": "^$", "match_all": true },
+	// 		{ "key": "following_text", "operator": "regex_match", "operand": "^$", "match_all": true }
+	// 	]
+	// },
 
 	{ "keys": ["alt+c"], "command": "duplicate_line" },
+	{ "keys": ["ctrl+e"], "command": "pass" },
+	{ "keys": ["f3"], "command": "find_next" },
+	{ "keys": ["shift+f3"], "command": "find_prev" },
+	{ "keys": ["ctrl+f3"], "command": "pass" },
+	{ "keys": ["ctrl+shift+f3"], "command": "pass" },
+	{ "keys": ["ctrl+shift+h"], "command": "find_all_under" },
+	{ "keys": ["ctrl+i"], "command": "pass", "args": {"panel": "incremental_find", "reverse": false} },
+
+
+	{ "keys": ["ctrl+u"], "command": "pass" },
+	{ "keys": ["ctrl+shift+u"], "command": "pass" },
+
+	{ "keys": ["ctrl+shift+j"], "command": "expand_selection", "args": {"to": "indentation"} },
+	{ "keys": ["ctrl+l"], "command": "reindent" },
 
 
 		// Find panel key bindings

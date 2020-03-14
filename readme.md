@@ -23,12 +23,23 @@ Package Control.last-run
 ## How to Un-Backup ?
 
 * Install Sublime Text (3).
-* Install `Package Control` via the website or via the command pallete « Install Package Control ».
-* Clone your (Git) repo from your source control service of choice inside the **Sublime Text (3) User folder**:
+
+* Execute
 ```
-git clone https://github.com/[username]/[reponame].git ~/.config/sublime-text-3/Packages/User/
+#!/user/bin/env bash
+
+sudo apt-get install sublime-text
+subl
+# check if sublime tex settings folder is present
+sudo wget -P "/home/ljak/.config/sublime-text-3/Installed Packages" https://packagecontrol.io/Package%20Control.sublime-package
+cd ~/.config/sublime-text-3/Packages/User/
+git init .
+git remote add origin https://github.com/ljak/STBackup
+git pull origin master
+cd
 ```
-* Start Sublime Text and ... wait: `Package control` needs to install all the packages.
+
+* wait a little bit (1 to 2 minutes...)
 
 * Enjoy!
 
